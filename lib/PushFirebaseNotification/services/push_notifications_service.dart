@@ -42,6 +42,8 @@ class PushNotificationsService {
 // this for foreground notifications
   static void handleForeGroundMessage() async {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+       // it not handle it to apper in notification bar so we use local notification 
+    //  print("FOREGROUND MESSAGE: ${message.notification?.title}");
       // show local notification
       LocalNotificationService.showBasicNotification(message);
     });
